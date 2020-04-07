@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_032011) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "employee_id"
     t.string "title"
     t.string "description"
     t.string "priority"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_032011) do
     t.string "estimate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id"
+    t.index ["employee_id"], name: "index_tasks_on_employee_id"
   end
 
 end

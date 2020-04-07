@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  belongs_to :user
+  belongs_to :employee
 
   extend Enumerize
   enumerize :priority, in: [:critical, :medium, :low]

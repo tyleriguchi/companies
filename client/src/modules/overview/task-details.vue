@@ -1,31 +1,39 @@
 <template>
   <div>
-    <h2 class="title">
+    <h3 class="capitalize">
       {{ task.title }}
       <button class="toggle-icon" v-if="showDetails" @click="toggleDetails">
-        &#8963;
+        -
       </button>
 
       <button class="toggle-icon" v-if="!showDetails" @click="toggleDetails">
-        ⌄
+        +
       </button>
-    </h2>
+    </h3>
     <div v-if="showDetails">
       <div>
-        <h3>Description</h3>
-        {{ task.description }}
+        <h4>Description</h4>
+        <span class="capitalize">
+          {{ task.description }}
+        </span>
       </div>
       <div>
-        <h3>Priority</h3>
-        {{ task.priority }}
+        <h4>Priority</h4>
+        <span class="capitalize">
+          {{ task.priority }}
+        </span>
       </div>
       <div>
-        <h3>State</h3>
-        {{ task.state }}
+        <h4>State</h4>
+        <span class="capitalize">
+          {{ task.state }}
+        </span>
       </div>
       <div>
-        <h3>Estimate</h3>
-        {{ task.estimate }}
+        <h4>Estimate</h4>
+        <span class="capitalize">
+          {{ task.estimate }}
+        </span>
       </div>
     </div>
   </div>
@@ -66,7 +74,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
+.capitalize {
   text-transform: capitalize;
 }
 

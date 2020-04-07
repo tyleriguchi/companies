@@ -1,12 +1,19 @@
 <template>
   <div>
+    <h3>Select an employee to view their tasks!</h3>
     <div v-for="(employee, index) in employees" :key="`${index} - employees`">
-      {{ employee.name }}
-      <button @click="selectEmployee(employee)">select employee</button>
+      <span class="capitalize">{{ employee.name }}</span>
+      <button
+        v-if="selectedEmployee && selectedEmployee.id != employee.id"
+        class="select-employee-button"
+        @click="selectEmployee(employee)"
+      >
+        →
+      </button>
     </div>
 
-    <div v-if="selectedEmployee">
-      <h2>{{ selectedEmployee.name }} tasks</h2>
+    <div v-if="selectedEmployee" style="margin-top: 40px;">
+      <h3 class="capitalize">Viewing Tasks for: {{ selectedEmployee.name }}</h3>
       <div v-for="task in sortedEmployeeTasks" :key="`task-${task.id}`">
         <task-details :task="task" />
       </div>
@@ -60,3 +67,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.capitalize {
+  text-transform: capitalize;
+}
+
+.select-employee-button {
+  background-color: unset;
+  border: none;
+  font-size: 1rem;
+}
+</style>

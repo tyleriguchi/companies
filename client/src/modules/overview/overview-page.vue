@@ -24,7 +24,7 @@
 <script>
 import TaskDetails from "@/modules/overview/task-details";
 
-import TaskSorting from "@/core/task/sorting";
+import TaskSorting from "@/domain/task/sorting";
 
 import OverviewApi from "@/shared/api/overview-api";
 

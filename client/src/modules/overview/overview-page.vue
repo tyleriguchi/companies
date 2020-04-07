@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Select an employee to view their tasks!</h3>
-    <div v-for="(employee, index) in employees" :key="`${index} - employees`">
+    <div v-for="employee in employees" :key="`${employee.id}-employees`">
       <span class="capitalize">{{ employee.name }}</span>
       <button
         v-if="selectedEmployee && selectedEmployee.id != employee.id"
